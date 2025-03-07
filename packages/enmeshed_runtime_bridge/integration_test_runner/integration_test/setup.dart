@@ -16,9 +16,9 @@ Future<EnmeshedRuntime> setup() async {
 
   final runtime = EnmeshedRuntime(
     runtimeConfig: (
-      baseUrl: const String.fromEnvironment('app_baseUrl'),
-      clientId: const String.fromEnvironment('app_clientId'),
-      clientSecret: const String.fromEnvironment('app_clientSecret'),
+      baseUrl: "https://pilot.enmeshed.eu",
+      clientId: "CLTABGeWdEeM9TzUvvIm",
+      clientSecret: "2J2HaASIDNKAu7M7ZcCcAURsRsqGP1",
       applicationId: 'eu.enmeshed.test',
       useAppleSandbox: const bool.fromEnvironment('app_useAppleSandbox'),
       databaseFolder: './database',

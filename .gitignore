@@ -12,3 +12,4 @@ apps/connector_ui/android/local.properties
 
 .env
 .env.*
+.history
