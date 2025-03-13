@@ -53,7 +53,7 @@ reflect-metadata/Reflect.js:
   ***************************************************************************** *)
 
 axios/dist/browser/axios.cjs:
-  (*! Axios v1.8.1 Copyright (c) 2025 Matt Zabriskie and contributors *)
+  (*! Axios v1.8.2 Copyright (c) 2025 Matt Zabriskie and contributors *)
 
 fast-json-patch/commonjs/helpers.js:
   (*!
