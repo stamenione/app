@@ -23,6 +23,8 @@ services:
     configs:
       - source: Config
         target: app/appsettings.override.json
+    networks:
+      - backbone
 
   event-handler-service:
     image: ghcr.io/nmshd/backbone-event-handler:${BACKBONE_VERSION}
@@ -37,6 +39,8 @@ services:
     configs:
       - source: Config
         target: app/appsettings.override.json
+    networks:
+      - backbone
 
   sse-server:
     image: ghcr.io/nmshd/backbone-sse-server:${BACKBONE_VERSION}
@@ -50,6 +54,8 @@ services:
     configs:
       - source: Config
         target: app/appsettings.override.json
+    networks:
+      - backbone
 
   admin-ui:
     image: ghcr.io/nmshd/backbone-admin-ui:${BACKBONE_VERSION}
@@ -69,6 +75,8 @@ services:
     configs:
       - source: Config
         target: app/appsettings.override.json
+    networks:
+      - backbone
 
   database-migrator:
     container_name: database-migrator-test
@@ -83,6 +91,8 @@ services:
     configs:
       - source: Config
         target: app/appsettings.override.json
+    networks:
+      - backbone
 
   ### infrastructure ###
 
@@ -100,6 +110,8 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    networks:
+      - backbone
 
   azure-storage-emulator:
     container_name: azure-storage-emulator
@@ -109,6 +121,8 @@ services:
     command: azurite -d /data/debug.log -l /data --blobHost "0.0.0.0" --queueHost "0.0.0.0"
     ports:
       - "10000:10000"
+    networks:
+      - backbone
 
   rabbitmq:
     container_name: bkb-rabbitmq
@@ -116,6 +130,8 @@ services:
     image: rabbitmq:4.0.5-alpine
     ports:
       - "5672:5672"
+    networks:
+      - backbone
 
   ### seeds ###
 
@@ -128,6 +144,8 @@ services:
     depends_on:
       database:
         condition: service_healthy
+    networks:
+      - backbone
 
   seed-client:
     container_name: seed-client
@@ -139,10 +157,12 @@ services:
     environment:
       Database__Provider: Postgres
       Database__ConnectionString: "Server=postgres;Database=enmeshed;User Id=devices;Password=Passw0rd;Port=5432"
+    networks:
+      - backbone
 
 networks:
-  default:
-    name: backbone
+  backbone:
+    external: true
 
 configs:
   Config:

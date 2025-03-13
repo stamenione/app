@@ -15,6 +15,7 @@ export 'citizenship.dart';
 export 'city.dart';
 export 'communication_language.dart';
 export 'country.dart';
+export 'credential.dart';
 export 'delivery_box_address.dart';
 export 'display_name.dart';
 export 'e_mail_address.dart';

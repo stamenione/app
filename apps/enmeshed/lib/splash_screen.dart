@@ -79,8 +79,8 @@ class _SplashScreenState extends State<SplashScreen> {
       runtimeConfig: (
         applicationId: 'eu.enmeshed.app',
         baseUrl: "https://pilot.enmeshed.eu",
-        clientId: "CLTABGeWdEeM9TzUvvIm",
-        clientSecret: "2J2HaASIDNKAu7M7ZcCcAURsRsqGP1",
+        clientId: "...",
+        clientSecret: "...",
         useAppleSandbox: const bool.fromEnvironment('app_useAppleSandbox'),
         databaseFolder: './database',
       ),

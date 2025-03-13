@@ -18,6 +18,7 @@ abstract class IdentityAttributeValue extends AttributeValue {
       'DisplayName' => DisplayNameAttributeValue.fromJson(json),
       'IdentityFileReference' => IdentityFileReferenceAttributeValue.fromJson(json),
       'GivenName' => GivenNameAttributeValue.fromJson(json),
+      'Credential' => CredentialAttributeValue.fromJson(json),
       'HonorificPrefix' => HonorificPrefixAttributeValue.fromJson(json),
       'HonorificSuffix' => HonorificSuffixAttributeValue.fromJson(json),
       'HouseNumber' => HouseNumberAttributeValue.fromJson(json),
